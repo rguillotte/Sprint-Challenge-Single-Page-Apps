@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 
-export default function LocationCard({ name, type, dimension, residents }) {
+export default function EpisodeCard({name, date, episode, characters}) {
 
   const Card = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ export default function LocationCard({ name, type, dimension, residents }) {
   border-radius: 8px;
   border: 1px solid black;
   width: 350px;
-  height 135px;
+  height auto;
   margin: 20px 30px;
   color: black;
   font-family: 'Roboto', sans-serif;
@@ -55,7 +55,7 @@ const Image = styled.img`
 const Footer = styled.div`  
 padding-left: 10px;
 padding-top: 8px;
-margin-bottom: 0;
+padding-bottom: 8px;;
 
 `
 const Divider = styled.div`
@@ -65,14 +65,12 @@ width: 100%;
 
   return (
     <Card>
-      <Header>{name}</Header>
+      <Header>{episode}: {name}</Header>
       <List>
-        <ListItems>Type: {type}</ListItems>
-        <ListItems>Dimension: {dimension}</ListItems>
+        <ListItems>Date Aired: {date}</ListItems>
       </List>
       <Divider></Divider>
-      <Footer>Residents: {residents.length}</Footer>
+      <Footer>Characters: {characters.length}</Footer>
     </Card>
-
   )
 }
